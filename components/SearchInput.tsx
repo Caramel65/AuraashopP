@@ -22,10 +22,8 @@ const SearchInput = ({ initialQuery }: { initialQuery?: string }) => {
       <TouchableOpacity
         onPress={() => {
           if (query === "")
-            return Alert.alert(
-              "ไม่พบคำค้นหา",
-              "กรุณาระบุคำค้นหา"
-            );
+            return Alert.alert("ไม่พบคำค้นหา", "กรุณาระบุคำค้นหา", [{ text: "OK" }]);
+
 
           if (pathname.startsWith("/search")) router.setParams({ query });
           else router.push('/home');
